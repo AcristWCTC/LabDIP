@@ -15,9 +15,9 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be between " + MIN_BILL + " and "
             + MAX_BILL;
-    private final double GOOD_RATE = 0.20;
-    private final double FAIR_RATE = 0.15;
-    private final double POOR_RATE = 0.10;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
     
     private double bill;
     private double baseTipPerBag;
@@ -37,19 +37,43 @@ public class BaggageServiceTipCalculator implements TipCalculator{
 
         switch(Quality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
         return tip;
     }
 
+    public void setGoodRate(double goodRate) {
+        this.goodRate = goodRate;
+    }
+
+    public void setFairRate(double fairRate) {
+        this.fairRate = fairRate;
+    }
+
+    public void setPoorRate(double poorRate) {
+        this.poorRate = poorRate;
+    }
+
+    public double getGoodRate() {
+        return goodRate;
+    }
+
+    public double getFairRate() {
+        return fairRate;
+    }
+
+    public double getPoorRate() {
+        return poorRate;
+    }
+    
     public final void setServiceRating(Quality q) {
         // No need to validate because enums provide type safety!
         Quality = q;

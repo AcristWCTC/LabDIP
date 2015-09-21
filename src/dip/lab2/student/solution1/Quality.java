@@ -9,3 +9,8 @@ package dip.lab2.student.solution1;
  *
  * @author Adam
  */
+
+ public enum Quality {
+        GOOD, FAIR, POOR
+    }
+

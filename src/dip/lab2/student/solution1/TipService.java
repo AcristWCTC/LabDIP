@@ -13,9 +13,6 @@ public class TipService {
 
     private TipCalculator tipCalc;
 
-    public TipService() {
-    }
-
     public TipService(TipCalculator tipCalc) {
         this.tipCalc = tipCalc;
     }

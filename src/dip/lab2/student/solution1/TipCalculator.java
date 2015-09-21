@@ -14,7 +14,4 @@ public interface TipCalculator {
       public abstract void setServiceRating(Quality q);
       public abstract double getBill();
       
-      public enum Quality {
-        GOOD, FAIR, POOR
-    }
 }
