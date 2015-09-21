@@ -15,8 +15,9 @@ public class Startup {
          */
 
         //Low-level modules
-        Employee e1 = new SalariedEmployee(45000, 1250);
-        Employee e2 = new HourlyEmployee(90000,0);
+        Employee e1 = new HourlyEmployee(10.50, 2020);
+        Employee e2 = new SalariedEmployee(45000, 1250);
+        
 
         Employee[] employees = {e1, e2};
 
