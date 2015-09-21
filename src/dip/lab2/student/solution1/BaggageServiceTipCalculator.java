@@ -10,11 +10,8 @@ package dip.lab2.student.solution1;
  * @author your name goes here
  */
 public class BaggageServiceTipCalculator implements TipCalculator{
-    private static final double MIN_BILL = 0.00;
-    private static final double MAX_BILL = 100.00;
-    private static final String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
-            + MAX_BILL;
+    private double minBill = 0.00;
+    private double maxBill = 100.00;
     private double goodRate = 0.20;
     private double fairRate = 0.15;
     private double poorRate = 0.10;
@@ -22,9 +19,9 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     private double bill;
     private double baseTipPerBag;
     private int bagCount;
-    private Quality Quality;
+    private ServiceQuality Quality;
 
-    public BaggageServiceTipCalculator(Quality q, int bags) {
+    public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
 
@@ -74,12 +71,12 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         return poorRate;
     }
     
-    public final void setServiceRating(Quality q) {
+    public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         Quality = q;
     }
 
-    public Quality getQuality() {
+    public ServiceQuality getQuality() {
         return Quality;
     }
 

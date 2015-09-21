@@ -22,7 +22,7 @@ public class Startup {
     
     public static void main(String[] args) {
         TipService tipService = new TipService
-        (new BaggageServiceTipCalculator(Quality.GOOD, 5));
+        (new BaggageServiceTipCalculator(ServiceQuality.GOOD, 5));
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         System.out.println(nf.format(tipService.getTip()));
         
