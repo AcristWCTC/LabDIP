@@ -10,9 +10,10 @@ package dip.lab3.student.solution1;
  * @author Adam
  */
 public class ConsoleMessageOutput implements MessageOutput{
+    @Override
     public void sendMessage(final MessageInput msgInput) {
         Message msg = msgInput.getMessage();
-        System.out.println(msg.getMessageAsString);
+        System.out.println(msg.getMessageAsString());
     }
     
 }

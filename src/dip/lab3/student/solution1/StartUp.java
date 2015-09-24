@@ -9,8 +9,8 @@ public class StartUp {
         // Try switching input and output strategies to see how flexible
         // this is...
         
-        MessageInput input = new StaticInput();
-        MessageOutput output = new ConsoleMessageOutput();
+        MessageInput input = new KeyboardInput();
+        MessageOutput output = new JOptionPaneOutput();
     
         MessageService service = new MessageService(input, output);
         service.produceMessage();
